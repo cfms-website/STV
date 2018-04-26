@@ -6,6 +6,8 @@ Code: Ryan Tse | Project: Sean Lieberman | [Contact Us](https://www.as.ucsb.edu/
 
 A Python-based elections tabulator utilizing a single transferable vote system with support for custom election configurations and dynamic ballot format parsing.
 
+This election tabulator uses the Droop quota as the winning condition and the Gregory method for surplus re-allocation.
+
 ## Screenshot
 <img align="center" src="https://i.imgur.com/sivOhHi.gif" alt="CFMS Election Tabulator gif">
 
