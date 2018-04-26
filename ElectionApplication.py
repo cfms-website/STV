@@ -11,7 +11,7 @@ def main(argv=None):
         # Use sys.argv since argv was not passed in.
         argv = sys.argv[1:]
 
-    parser = argparse.ArgumentParser(description="UCSB AS Elections Tabulator")
+    parser = argparse.ArgumentParser(description="CFMS Elections Tabulator")
     parser.add_argument("--interface", help="interface mode", dest="interface", choices=["gui"], default="gui")
     parser.add_argument("--interface-options", help="interface options", dest="interface_options", default="")
     parser_group_election = parser.add_argument_group("election configuration")

@@ -97,7 +97,7 @@ class Election:
                 target_candidate = ElectionCandidate(
                     candidate["candidate_id"],
                     candidate["candidate_name"],
-                    candidate["candidate_party"]
+                    candidate["candidate_school"]
                 )
                 self.logger.info("Adding %s candidate to %s race.", target_candidate, target_race)
                 target_race.add_candidate(target_candidate)

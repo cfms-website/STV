@@ -112,7 +112,7 @@ class WindowMain(wx.Frame):
         self.menu_help = wx.Menu()
 
         # Help Menu > About
-        self.menu_help_about = self.menu_help.Append(wx.ID_ABOUT, "&About UCSB AS Election Tabulator")
+        self.menu_help_about = self.menu_help.Append(wx.ID_ABOUT, "&About CFMS Election Tabulator")
         self.Bind(wx.EVT_MENU, self.show_about, self.menu_help_about)
 
         self.menu.Append(self.menu_help, "&Help")
@@ -196,7 +196,7 @@ class WindowMain(wx.Frame):
         self.SetMinSize((750, 500))
         self.Layout()
 
-        self.SetTitle("UCSB AS Election Tabulator")
+        self.SetTitle("CFMS Election Tabulator")
 
         # Setup the UI state.
         combo_box_text = []

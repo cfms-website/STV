@@ -85,7 +85,7 @@ class WindowNew(wx.Dialog):
         self.sizer_main.AddGrowableCol(0)
         self.Layout()
 
-        self.SetTitle("UCSB AS Election Tabulator")
+        self.SetTitle("CFMS Election Tabulator")
 
     def ui_browse_configuration_file(self, event):
         election_configuration_file = wx.FileDialog(self, "", "", "", "Election Configuration files (*.json)|*.json", wx.FD_OPEN | wx.FD_FILE_MUST_EXIST)

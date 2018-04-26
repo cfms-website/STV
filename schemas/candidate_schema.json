@@ -12,12 +12,12 @@
 					"type": "string",
 					"description": "A (full) name for the candidate."
 				},
-				"candidate_party": {
+				"candidate_school": {
 					"type": "string",
-					"description": "The candidate's party affiliation."
+					"description": "The candidate's school affiliation."
 				}
 			},
-			"required": ["candidate_id", "candidate_name", "candidate_party"]
+			"required": ["candidate_id", "candidate_name", "candidate_school"]
 		}
 	},
 

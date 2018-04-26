@@ -1,5 +1,7 @@
-# UCSB AS Elections Tabulator
-Software by [Associated Students, UC Santa Barbara](https://www.as.ucsb.edu/ "Associated Students, UC Santa Barbara").  
+# CFMS Elections Tabulator
+
+Developed for the CFMS by [Pavel Yarmak](http://pavel.yarmak.me/)  
+Original software designed by [Associated Students, UC Santa Barbara](https://www.as.ucsb.edu/ "Associated Students, UC Santa Barbara")  
 Code: Ryan Tse | Project: Sean Lieberman | [Contact Us](https://www.as.ucsb.edu/stv-contact/ "Contact Us")
 
 A Python-based elections tabulator utilizing a single transferable vote system with support for custom election configurations and dynamic ballot format parsing.
@@ -15,7 +17,6 @@ Prerequisites:
 Installation:
 ```
 pip install --upgrade -r requirements.txt
-pip install --upgrade --pre --trusted-host wxpython.org -f http://wxpython.org/Phoenix/snapshot-builds/ wxPython_Phoenix
 ```
 
 ## Usage

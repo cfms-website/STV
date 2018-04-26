@@ -1,0 +1,28 @@
+{
+  "general": {
+    "parser_directory": "./parser/",
+    "candidate_parser": "ElectionCandidateParser",
+    "ballot_parser": "ElectionBallotParser",
+    "default_speed": 95
+  },
+  "races": [
+    {
+      "race_id": 1,
+      "race_position": "Ontario Representative",
+      "race_max_winners": 2,
+      "race_extended_data": {
+        "parser_group": "ontario_rep",
+        "display_order": 1
+      }
+    },
+    {
+      "race_id": 2,
+      "race_position": "VP Student Affairs",
+      "race_max_winners": 1,
+      "race_extended_data": {
+        "parser_group": "vpsa",
+        "display_order": 2
+      }
+    }
+  ]
+}

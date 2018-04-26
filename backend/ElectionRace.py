@@ -141,7 +141,7 @@ class ElectionRace:
 
         The returned table contains the following values:
         - Candidate Name
-        - Candidate Party
+        - Candidate School
         - Candidate State
         - Candidate Score
         - Droop Quota Percentage
@@ -168,14 +168,14 @@ class ElectionRace:
         # Winning candidates are sorted in the following order:
         #   1. The round that the candidate won in.
         #   2. The score of the candidate when the candidate won.
-        #   3. The party of the candidate.
+        #   3. The school of the candidate.
         #   4. The name of the candidate.
-        table_group_won = sorted(candidate_state_groups[ElectionCandidateState.WON], key=lambda sort_candidate: (-1 * (election_round.round() - candidate_states[sort_candidate].round().round()), -1 * (candidate_states[sort_candidate].round().get_candidate_score(sort_candidate)), sort_candidate.party(), sort_candidate.name()))
+        table_group_won = sorted(candidate_state_groups[ElectionCandidateState.WON], key=lambda sort_candidate: (-1 * (election_round.round() - candidate_states[sort_candidate].round().round()), -1 * (candidate_states[sort_candidate].round().get_candidate_score(sort_candidate)), sort_candidate.school(), sort_candidate.name()))
         for _candidate in table_group_won:
             _candidate_score = candidate_states[_candidate].round().get_candidate_score(_candidate)
             table_data.append([
                 _candidate.name(),
-                _candidate.party(),
+                _candidate.school(),
                 "WON",
                 str(droop_quota) + " (" + str(round_down(_candidate_score, score_resolution)) + ")",
                 str(_candidate_score / droop_quota)
@@ -183,14 +183,14 @@ class ElectionRace:
 
         # Running candidates are sorted in the following order:
         #   1. The current score of the candidate.
-        #   2. The party of the candidate.
+        #   2. The school of the candidate.
         #   3. The name of the candidate.
-        table_group_running = sorted(candidate_state_groups[ElectionCandidateState.RUNNING], key=lambda sort_candidate: (-1 * candidate_scores[sort_candidate], sort_candidate.party(), sort_candidate.name()))
+        table_group_running = sorted(candidate_state_groups[ElectionCandidateState.RUNNING], key=lambda sort_candidate: (-1 * candidate_scores[sort_candidate], sort_candidate.school(), sort_candidate.name()))
         for _candidate in table_group_running:
             _candidate_score = candidate_scores[_candidate]
             table_data.append([
                 _candidate.name(),
-                _candidate.party(),
+                _candidate.school(),
                 "RUNNING",
                 str(round_down(_candidate_score, score_resolution)),
                 str(_candidate_score / droop_quota)
@@ -199,9 +199,9 @@ class ElectionRace:
         # Eliminated candidates are sorted in the following order:
         #   1. The round that the candidate was eliminated in.
         #   2. The score of the candidate when the candidate was eliminated.
-        #   3. The party of the candidate.
+        #   3. The school of the candidate.
         #   4. The name of the candidate.
-        table_group_eliminated = sorted(candidate_state_groups[ElectionCandidateState.ELIMINATED], key=lambda sort_candidate: (-1 * (candidate_states[sort_candidate].round().round()), -1 * (candidate_states[sort_candidate].round().get_candidate_score(sort_candidate)), sort_candidate.party(), sort_candidate.name()))
+        table_group_eliminated = sorted(candidate_state_groups[ElectionCandidateState.ELIMINATED], key=lambda sort_candidate: (-1 * (candidate_states[sort_candidate].round().round()), -1 * (candidate_states[sort_candidate].round().get_candidate_score(sort_candidate)), sort_candidate.school(), sort_candidate.name()))
         for _candidate in table_group_eliminated:
             _candidate_score = candidate_states[_candidate].round().get_candidate_score(_candidate)
             _candidate_state = "ELIMINATED"
@@ -209,7 +209,7 @@ class ElectionRace:
                 _candidate_state = "TRANSFERRING"
             table_data.append([
                 _candidate.name(),
-                _candidate.party(),
+                _candidate.school(),
                 _candidate_state,
                 "0 (" + str(round_down(_candidate_score, score_resolution)) + ")",
                 "0"
@@ -258,7 +258,7 @@ class ElectionRace:
                     table_data = self.get_data_table(current_round)
                     table_data[:0] = [[
                         "Candidate",
-                        "Party",
+                        "School",
                         "Status",
                         "Score",
                         "Quota Percentage"

@@ -11,12 +11,12 @@
 #       {
 #           "candidate_id": "unique_candidate_id",
 #           "candidate_name": "candidate_full_name",
-#           "candidate_party": "candidate_party"
+#           "candidate_school": "candidate_school"
 #       },
 #       {
 #           "candidate_id": "unique_candidate_id",
 #           "candidate_name": "candidate_full_name",
-#           "candidate_party": "candidate_party"
+#           "candidate_school": "candidate_school"
 #       },
 #       ...
 #   ],
@@ -24,12 +24,12 @@
 #       {
 #           "candidate_id": "unique_candidate_id",
 #           "candidate_name": "candidate_full_name",
-#           "candidate_party": "candidate_party"
+#           "candidate_school": "candidate_school"
 #       },
 #       {
 #           "candidate_id": "unique_candidate_id",
 #           "candidate_name": "candidate_full_name",
-#           "candidate_party": "candidate_party"
+#           "candidate_school": "candidate_school"
 #       },
 #       ...
 #   ],
@@ -81,7 +81,7 @@ def parse(candidate_file_path, races):
                     candidates.append({
                         "candidate_id": candidate,
                         "candidate_name": candidate,
-                        "candidate_party": "Independent"
+                        "candidate_school": "Independent"
                     })
 
             for column_index in race_columns[race]:
@@ -91,11 +91,11 @@ def parse(candidate_file_path, races):
                 if candidate_file_data[1][column_index].strip() in candidates_dropped_out:
                     continue
 
-                (candidate_name, candidate_party) = candidate_file_data[1][column_index].rsplit("-", 1)
+                (candidate_name, candidate_school) = candidate_file_data[1][column_index].rsplit("-", 1)
                 candidates.append({
                     "candidate_id": candidate_file_data[1][column_index],
                     "candidate_name": candidate_name.strip(),
-                    "candidate_party": candidate_party.strip()
+                    "candidate_school": candidate_school.strip()
                 })
 
             candidates_data[race.id()] = candidates

@@ -80,7 +80,7 @@ class PanelRaceTable(wx.Panel):
     class RaceGridData(wx.grid.GridTableBase):
         def __init__(self):
             wx.grid.GridTableBase.__init__(self)
-            self._table_columns = ["Candidate", "Party", "Status", "Score", "Quota Percentage"]
+            self._table_columns = ["Candidate", "School", "Status", "Score", "Quota Percentage"]
             self._table_rows = []
 
         def GetNumberRows(self):

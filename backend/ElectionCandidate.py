@@ -1,8 +1,8 @@
 class ElectionCandidate:
-    def __init__(self, candidate_id, candidate_name, candidate_party):
+    def __init__(self, candidate_id, candidate_name, candidate_school):
         self._id = candidate_id
         self._name = candidate_name
-        self._party = candidate_party
+        self._school = candidate_school
 
     def id(self):
         return self._id
@@ -10,18 +10,18 @@ class ElectionCandidate:
     def name(self):
         return self._name
 
-    def party(self):
-        return self._party
+    def school(self):
+        return self._school
 
     def __hash__(self):
-        return hash((self._id, self._name, self._party))
+        return hash((self._id, self._name, self._school))
 
     def __eq__(self, other):
         return isinstance(other, self.__class__) and \
-               (self.id(), self.name(), self.party()) == (other.id(), other.name(), other.party())
+               (self.id(), self.name(), self.school()) == (other.id(), other.name(), other.school())
 
     def __str__(self):
-        return self._name + " - " + self._party
+        return self._name + " - " + self._school
 
     def __repr__(self):
-        return self._name + " - " + self._party
+        return self._name + " - " + self._school

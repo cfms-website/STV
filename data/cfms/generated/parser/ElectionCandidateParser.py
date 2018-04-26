@@ -11,12 +11,12 @@
 #       {
 #           "candidate_id": "unique_candidate_id",
 #           "candidate_name": "candidate_full_name",
-#           "candidate_party": "candidate_party"
+#           "candidate_school": "candidate_school"
 #       },
 #       {
 #           "candidate_id": "unique_candidate_id",
 #           "candidate_name": "candidate_full_name",
-#           "candidate_party": "candidate_party"
+#           "candidate_school": "candidate_school"
 #       },
 #       ...
 #   ],
@@ -24,12 +24,12 @@
 #       {
 #           "candidate_id": "unique_candidate_id",
 #           "candidate_name": "candidate_full_name",
-#           "candidate_party": "candidate_party"
+#           "candidate_school": "candidate_school"
 #       },
 #       {
 #           "candidate_id": "unique_candidate_id",
 #           "candidate_name": "candidate_full_name",
-#           "candidate_party": "candidate_party"
+#           "candidate_school": "candidate_school"
 #       },
 #       ...
 #   ],
@@ -65,7 +65,7 @@ def parse(candidate_file_path, races):
                 race_candidates_data.append({
                     "candidate_id": race_data_candidate["number"],
                     "candidate_name": race_data_candidate["name"],
-                    "candidate_party": race_data_candidate["party"]
+                    "candidate_school": race_data_candidate["school"]
                 })
             candidates_data[race.id()] = race_candidates_data
 

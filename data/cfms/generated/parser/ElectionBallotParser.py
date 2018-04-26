@@ -1,8 +1,8 @@
 ###############
-# Ballot Parser for UC Berkeley Results
+# Ballot Parser for CFMS Results
 #
 # This ballot parser has been tailored to the ballot
-# system used by UCB. If you use another software
+# system used by CFMS. If you use another software
 # to define ballots, ensure the data returned by the
 # ballot parser returns data in the following fashion:
 #
@@ -53,10 +53,9 @@
 # The candidate_id should correspond to the value
 # returned by the election candidate parser.
 #
-# Last Modified: April 12, 2016
+# Last Modified: July 20, 2017
 ###############
 import json
-import uuid
 
 
 def parse(ballot_file_path, races):
@@ -65,10 +64,8 @@ def parse(ballot_file_path, races):
     # Open the ballot file.
     with open(ballot_file_path, encoding="UTF-8", errors="ignore") as ballot_file:
         ballot_file_data = json.loads(ballot_file.read())
-        for ballot in ballot_file_data["ballots"]:
-            ballot_data = {}
-            ballot_data["ballot_id"] = str(uuid.uuid4())
-            ballot_data["ballot_data"] = {}
+        for ballot_id, ballot in ballot_file_data.items():
+            ballot_data = {"ballot_id": ballot_id, "ballot_data": {}}
 
             for race in races:
                 ballot_data["ballot_data"][race.id()] = ballot[race.id()]

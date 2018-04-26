@@ -43,7 +43,7 @@ Validation for this type of question is simple. Change it to "Must Rank Between"
 
 This is what it should look like when we're done with it (after randomization, which we'll go over soon). Change Q1 or Q2 or whatever is in the upper left corner to "President". Do the same for the title of the question. Add your own disclaimer and instructions about voting.
 
-Give a name to your candidates (and add a party if needed). A write-in candidate isn't required, but it is fully supported (more on that later).
+Give a name to your candidates (and add a school if needed). A write-in candidate isn't required, but it is fully supported (more on that later).
 
 Now it's time for the alternative question type: "Matrix Table". This is, incidentally, what we use for all of our candidates at UCSB.
 
@@ -70,7 +70,7 @@ Now it's time for the alternative question type: "Matrix Table". This is, incide
 
 This is what things will look like. Change Qx in the upper left corner to "Senator". Do the same for the title of the question. Add your own disclaimer and instructions about voting. This question has 3 positions available (you can rank your #1, #2 and #3).
 
-As above, give a name/party to your candidates .
+As above, give a name/school to your candidates .
 
 <p align="center">
 <img src="images/senator-scale-points1.png">
@@ -204,7 +204,7 @@ Change all "Q1D3xxx" headers to "Senator".
 The next row is the name of the candidates prepended by the name of the position and an incrementing numeral. Remove the text before all the candidate names. For example:
 
 <pre>
-President_1 - Pizza - Meat Party  >>  Pizza - Meat Party
+President_1 - Pizza - Meat School  >>  Pizza - Meat School
 President_4 - Write-In  >>  Write-In
 </pre>
 
@@ -261,7 +261,7 @@ Here it is in its entirety:
         "parser_group": "Senator",
         "parser_writein_fields": 1,
         "parser_writein_whitelist": ["Ramen"],
-	"parser_candidates_droppedout": ["Salad - Vegan Party"],
+	"parser_candidates_droppedout": ["Salad - Vegan School"],
         "display_order": 1
       }
     }
