@@ -7,7 +7,9 @@ Code: Ryan Tse | Project: Sean Lieberman | [Contact Us](https://www.as.ucsb.edu/
 A Python-based elections tabulator utilizing a single transferable vote system with support for custom election configurations and dynamic ballot format parsing.
 
 ## Screenshot
-<img align="center" src="https://cloud.githubusercontent.com/assets/12377481/14589208/0bc4ae68-0491-11e6-89cc-4e80bef73a9e.png" alt="UCSB AS Elections Tabulator Screenshot">
+<img align="center" src="https://i.imgur.com/sivOhHi.gif" alt="CFMS Election Tabulator gif">
+
+<img align="center" src="https://i.imgur.com/lp8E60N.gif" alt="CFMS Election Tabulator gif">
 
 ## Installation
 Prerequisites:
@@ -28,9 +30,9 @@ For advanced configuration options, refer to the help documentation available by
 The data format schemas for configuration, candidate, and ballot files can be found in the ``/schemas/`` directory. Configuration, candidate, and ballot file data are automatically compared against the provided JSON schemas prior to usage by the application. To verify a custom configuration/implementation, utilize a service like [JSON Schema Lint](http://jsonschemalint.com/draft4/ "JSON Schema Lint").
 
 **_Sample Data:_**
-Sample configuration and data can be found in ``/data/``. Existing format compatibility has been developed for UC Santa Barbara (``/data/ucsb/``) and UC Berkeley (``/data/ucb/``) ballot formats.
+Sample configuration and data can be found in ``/data/``. Existing format compatibility has been developed for the CFMS ballot format (``/data/cfms``).
 
-Refer to the ``/data/*/generated/`` folder for each respective directory for a random data generator for the file format. To invoke the generator, run ``python generator.py``. The resulting files will be created in the same directory.
+Refer to the ``/data/cfms/generated/`` folder for each respective directory for a random data generator for the file format. To invoke the generator, run ``python generator.py``. The resulting files will be created in the same directory.
 
 ## Compatibility
 Tested on Mac OS X 10.11.4 and Windows 10 with:
@@ -38,5 +40,3 @@ Tested on Mac OS X 10.11.4 and Windows 10 with:
 - wxPython-Phoenix 3.0.3.dev1964+f780b21
 - jsonschema 2.5.1
 - terminaltables 2.1.0
-
-_Note: The application's performance has not been optimized for Windows._
